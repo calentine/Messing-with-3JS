@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
-import marsTexture from '../src/assets/photo/mars.jpg';
+import marsTexture from '../src/assets/photo/mars2.jpg';
 
 interface Mars3DViewProps {
   elevationData: number[]; // Elevation data array
@@ -10,7 +10,7 @@ const Mars3DView: React.FC<Mars3DViewProps> = ({ elevationData }) => {
   const mountRef = useRef<HTMLDivElement | null>(null);
 
   // Local state for camera position
-  const [cameraPosition, setCameraPosition] = useState({ x: 0, y: 0, z:32 });
+  const [cameraPosition, setCameraPosition] = useState({ x: 0, y: 0, z:64 });
 
   useEffect(() => {
     if (!mountRef.current) return;
@@ -23,7 +23,7 @@ const Mars3DView: React.FC<Mars3DViewProps> = ({ elevationData }) => {
     mountRef.current.appendChild(renderer.domElement);
 
     // Mars Sphere Geometry
-    const geometry = new THREE.SphereGeometry(4, 64, 64);
+    const geometry = new THREE.SphereGeometry(3, 64, 64);
     const vertices = geometry.attributes.position.array;
 
     // Apply elevation data to vertices
