@@ -11,7 +11,7 @@ const Mars3DView: React.FC<Mars3DViewProps> = ({ elevationData }) => {
 
   // Local state for camera position
   const [cameraPosition, setCameraPosition] = useState({ x: 0, y: 0, z:64 });
-
+  //  
   useEffect(() => {
     if (!mountRef.current) return;
 
